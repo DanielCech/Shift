@@ -68,5 +68,9 @@ public extension Shiftable {
     public func stopAnimation() {
         shiftLayer.stopAnimation()
     }
+    
+    public func applyGradient() {
+        shiftLayer.applyGradient()
+    }
 }
 

@@ -137,9 +137,9 @@ public class ShiftLayer: CAGradientLayer {
             print("SHIFT ERROR: animation requires two or more colors")
             return false
         }
-        if gradientColors.count == 2 {
-            gradientColors.append(gradientColors[0])
-        }
+//        if gradientColors.count == 2 {
+//            gradientColors.append(gradientColors[0])
+//        }
         return true
     }
     
@@ -148,6 +148,10 @@ public class ShiftLayer: CAGradientLayer {
         let (startColors, endColors) = colorsForTimedAnimation()
         colors = startColors
         CABasicAnimation.addAnimationTo(self, duration: animationDuration, colors: endColors)
+    }
+    
+    public func applyGradient() {
+        colors = gradientColors
     }
     
     override open func removeFromSuperlayer() {
